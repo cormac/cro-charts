@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!--[if lte IE 8]>
+    <script src="/vendor/r2d3/r2d3.js" charset="utf-8"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+      <script src="/d3/d3.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" charset="utf-8"> </script>
+
+  <title>js testing</title>
+  <style type="text/css" media="screen">
+    #donut-container, .donut-css {
+      width: 500px;
+      height: 200px;
+      margin: auto;
+      padding: 10px;
+    }
+    @font-face {
+      font-family: LeagueGothic;
+      src: url(/assets/LeagueGothic.eot) format("eot");
+      src: url(assets/LeagueGothic.eot) format("eot"), url("/assets/LeagueGothic.otf") format("opentype");
+    }
+
+    p.customfont { 
+      font-family: "LeagueGothic", Verdana, Tahoma;
+    }
+  </style>
+</head>
+<body>
+  <p class='customfont'>
+  some text
+  </p>
+  <div class="donut donut-user-1">
+  </div>
+  <div class="donut donut-user-2">
+  </div>
+  <script type="text/javascript" src="/js/donut.js" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    (function(SQ) {
+      var inputData = [
+        {
+          score: 63, 
+          userId: 1,
+          quartile: 1
+        },
+        {
+          score: 45, 
+          userId: 2,
+          quartile: 2
+        }
+      ];
+      var startTheDonut = function() {
+        var testData = SQ.Utils.DataFormatter(inputData);
+        SQ.Charts.Donut.createDonutCharts(testData);
+      };
+      if (document.attachEvent) {// ie8
+        document.attachEvent( 'onreadystatechange', function() {
+          if (document.readyState === 'complete') {
+            SQ.IEFlag = 1;
+            startTheDonut();
+          }
+        });
+      }
+      else {
+        startTheDonut();
+      }
+
+
+    }(SQ));
+  </script>
+  <!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
+</body>
+</html>
+
