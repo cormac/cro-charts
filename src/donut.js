@@ -109,14 +109,14 @@ SQ.Charts = SQ.Charts || {};
   };
 
   var chooseColors = function(quartile) {
-    var green  = '#6cb8a4',
+    var green  = '#97ce68',
         grey   = '#e3e3e4',
-        red    = '#b16569',
-        orange = '#cc7130',
+        red    = '#ff6766',
+        orange = '#f7a720',
         colorSelector = [undefined, green, orange, red];
 
-    innerFill = '#1e656b';
-    textColor = green;
+    innerFill = '#6BCBCA';
+    textColor = '#ffffff';
         
 
     var colorRange = [grey, colorSelector[quartile]];
